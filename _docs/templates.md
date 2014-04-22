@@ -23,7 +23,16 @@ Make sure to change the _domain/name_ the _devices/disk/source_ for the disk and
     $ kvm-img create -f qcow2 disk.img 40G
     $ virsh create libvirt_install.xml
 
-Once the instance has started you need to connect a VNC client to the port 5901. While you follow the installation menu we propose to always create a minimal system configuration, which is the same across all golden images your create.
+Once the instance has started you need to connect a VNC client to the port 5901.
+If no VNC client is installed on the host machine install one
+
+    $ sudo apt-get install xvnc4viewer
+
+To connect to the newly created virtual machine do
+
+    $ xvncviewer localhost:5901 
+
+ While you follow the installation menu we propose to always create a minimal system configuration, which is the same across all golden images your create.
 
 Set the following configuration options during installation:
 
